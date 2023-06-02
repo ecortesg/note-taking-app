@@ -14,12 +14,13 @@ datasource db {
 model Note {
     id        String   @id @default(uuid())
     userId    String
-    content   String
-    source    String
+    content   String   @db.Text
+    source    String   @db.TinyText
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+    @@unique([createdAt, id])
     @@index([userId])
 }
 
