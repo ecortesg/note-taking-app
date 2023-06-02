@@ -8,8 +8,14 @@ export function NavBar() {
   return (
     <nav className="flex items-center justify-between bg-white p-4">
       <div className="flex items-center gap-4">
-        <Image className="h-6 w-6 rounded" src="icon.png" alt="Lernote Logo" />
-        <h1 className="text-lg font-bold">Lernote</h1>
+        <Image
+          className="rounded"
+          src="/icon.png"
+          width={34}
+          height={34}
+          alt="Lernote Logo"
+        />
+        <h1 className="text-xl font-bold">Lernote</h1>
       </div>
       <ul className="flex gap-4">
         {user == null ? (

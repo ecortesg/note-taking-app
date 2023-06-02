@@ -40,7 +40,16 @@ export function HomePage() {
             </Button>
           </div>
         </div>
-        <Image className="p-4" src="taking_notes.svg" alt="" />
+        <div className="w-1/2 p-4">
+          <Image
+            src="/taking_notes.svg"
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-full h-auto"
+            alt="Taking Notes Illustration"
+          />
+        </div>
       </section>
       <section className="flex gap-16 p-4">
         <ul className="flex flex-col gap-8 lg:flex-row">
