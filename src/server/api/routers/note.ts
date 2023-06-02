@@ -1,11 +1,9 @@
 import { Prisma } from "@prisma/client";
 import { inferAsyncReturnType } from "@trpc/server";
-import next from "next/types";
 import { z } from "zod";
 
 import {
   createTRPCRouter,
-  publicProcedure,
   protectedProcedure,
   createTRPCContext,
 } from "~/server/api/trpc";

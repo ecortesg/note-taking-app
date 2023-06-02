@@ -1,5 +1,5 @@
 import { signIn, signOut, useSession } from "next-auth/react";
-import Link from "next/link";
+import Image from "next/image";
 
 export function NavBar() {
   const session = useSession();
@@ -7,8 +7,8 @@ export function NavBar() {
 
   return (
     <nav className="flex items-center justify-between bg-white p-4">
-      <div className="flex gap-4 items-center">
-        <img className="h-6 w-6 rounded" src="icon.png" alt="Lernote Logo" />
+      <div className="flex items-center gap-4">
+        <Image className="h-6 w-6 rounded" src="icon.png" alt="Lernote Logo" />
         <h1 className="text-lg font-bold">Lernote</h1>
       </div>
       <ul className="flex gap-4">

@@ -1,6 +1,7 @@
 import { Button } from "./Button";
 import { signIn } from "next-auth/react";
 import { VscLightbulb, VscIssueReopened, VscLibrary } from "react-icons/vsc";
+import Image from "next/image";
 
 const FEATURES = [
   {
@@ -26,7 +27,7 @@ export function HomePage() {
       <section className="mb-4 flex w-full flex-col items-center justify-between lg:flex-row">
         <div className="flex flex-col gap-6 p-4 text-center lg:w-1/2 lg:text-left">
           <h1 className="text-4xl font-bold">
-            "Your brain is for having ideas, not for holding them."
+            &quot;Your brain is for having ideas, not for holding them.&quot;
           </h1>
           <p className="text-lg font-bold">- David Allen</p>
           <p className="text-lg">
@@ -34,10 +35,12 @@ export function HomePage() {
             transforming the way you absorb, retain and recall information.
           </p>
           <div>
-            <Button className="mb-4" onClick={() => void signIn()}>GET STARTED FOR FREE</Button>
+            <Button className="mb-4" onClick={() => void signIn()}>
+              GET STARTED FOR FREE
+            </Button>
           </div>
         </div>
-        <img className="p-4" src="taking_notes.svg" alt="" />
+        <Image className="p-4" src="taking_notes.svg" alt="" />
       </section>
       <section className="flex gap-16 p-4">
         <ul className="flex flex-col gap-8 lg:flex-row">
@@ -54,7 +57,6 @@ export function HomePage() {
             );
           })}
         </ul>
-        {/* <img className="border rounded shadow w-96 h-96" src="/app_preview.png" alt="App Preview" /> */}
       </section>
     </>
   );

@@ -1,4 +1,3 @@
-import { Button } from "./Button";
 import { VscEdit, VscTrash } from "react-icons/vsc";
 
 type Note = {
@@ -57,7 +56,7 @@ export function NoteCard({
           </p>
         </div>
         <p className="whitespace-pre-wrap">{content}</p>
-        <div className="flex justify-end gap-3 mt-2">
+        <div className="mt-2 flex justify-end gap-3">
           <VscEdit
             className="cursor-pointer text-gray-500"
             onClick={() => openEditModal({ id, source, content })}

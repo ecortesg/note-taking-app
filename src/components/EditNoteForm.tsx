@@ -22,9 +22,9 @@ export function EditNoteForm({
   const trpcUtils = api.useContext();
 
   const editNote = api.note.edit.useMutation({
-    onSuccess: (updatedNote) => {
+    onSuccess: async (updatedNote) => {
       if (selectedTab === "Review") {
-        trpcUtils.note.randomFeed.invalidate();
+        await trpcUtils.note.randomFeed.invalidate();
       } else {
         if (
           updatedNote.source

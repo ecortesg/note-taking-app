@@ -18,9 +18,9 @@ export function DeleteNoteForm({
   const trpcUtils = api.useContext();
 
   const deleteNote = api.note.delete.useMutation({
-    onSuccess: (deletedNote) => {
+    onSuccess: async (deletedNote) => {
       if (selectedTab === "Review") {
-        trpcUtils.note.randomFeed.invalidate();
+        await trpcUtils.note.randomFeed.invalidate();
       } else {
         // Update data inplace whenever a note is deleted
         trpcUtils.note.infiniteFeed.setInfiniteData(
