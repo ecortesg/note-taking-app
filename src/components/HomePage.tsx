@@ -27,8 +27,8 @@ const FEATURES = [
 export function HomePage() {
   return (
     <>
-      <section className="flex w-full flex-col items-center justify-between lg:flex-row">
-        <div className="flex flex-col gap-6 p-4 text-center lg:w-1/2 lg:text-left">
+      <section className="flex w-full flex-col items-center justify-between lg:flex-row mb-4">
+        <div className="flex flex-col gap-6 p-4 text-center lg:text-left">
           <h1 className="text-4xl font-bold">Never Forget What You Learn</h1>
           <p className="text-lg">
             Lernote makes it easy to capture and review your notes from podcasts
@@ -41,7 +41,7 @@ export function HomePage() {
             </Button>
           </div>
         </div>
-        <div className="flex p-4 align-middle lg:h-[500px] lg:w-2/3">
+        <div className="flex p-4 align-middle lg:w-2/3">
           <Image
             src="/taking_notes.svg"
             width="0"
