@@ -2,6 +2,7 @@ import { Button } from "./Button";
 import { signIn } from "next-auth/react";
 import { VscLightbulb, VscIssueReopened, VscLibrary } from "react-icons/vsc";
 import Image from "next/image";
+import Link from "next/link";
 
 const FEATURES = [
   {
@@ -27,7 +28,7 @@ const FEATURES = [
 export function HomePage() {
   return (
     <>
-      <section className="flex w-full flex-col items-center justify-between lg:flex-row mb-4">
+      <section className="mb-4 flex w-full flex-col items-center justify-between lg:flex-row">
         <div className="flex flex-col gap-6 p-4 text-center lg:text-left">
           <h1 className="text-4xl font-bold">Never Forget What You Learn</h1>
           <p className="text-lg">
@@ -35,14 +36,20 @@ export function HomePage() {
             and books, transforming the way you absorb, retain and recall
             information.
           </p>
-          <div>
-            <Button className="mb-4" onClick={() => void signIn()}>
-              GET STARTED FOR FREE
-            </Button>
+          <div className="m-auto mb-4 flex flex-col gap-3 lg:m-0 lg:flex-row">
+            <Button onClick={() => void signIn()}>GET STARTED FOR FREE</Button>
+            <Link
+              className="rounded border border-black px-4 py-2 font-semibold duration-200 hover:bg-black hover:text-white focus-visible:bg-black focus-visible:text-white"
+              href="/#demo"
+              scroll={false}
+            >
+              WATCH DEMO
+            </Link>
           </div>
         </div>
         <div className="flex p-4 align-middle lg:w-2/3">
           <Image
+            priority={true}
             src="/taking_notes.svg"
             width="0"
             height="0"
@@ -67,6 +74,14 @@ export function HomePage() {
             );
           })}
         </ul>
+      </section>
+      <section id="demo" className="mb-4 flex flex-col items-center gap-4 p-4">
+        <h2 className="text-center text-4xl font-bold">Demo</h2>
+        <iframe
+          className="h-96 w-full shadow-2xl lg:h-[540px] lg:w-[960px]"
+          src="https://www.youtube.com/embed/a0BeRnAGPDo?mute=1"
+          allowFullScreen
+        ></iframe>
       </section>
     </>
   );
